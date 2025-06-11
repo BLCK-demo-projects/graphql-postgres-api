@@ -5,6 +5,8 @@ Spring app using JPA, GraphQL and PostgreSQL driver that provides a GraphQL API 
 
 How to run:
 - `git clone https://github.com/BLCK-demo-projects/graphql-postgres-api`
+- set up JDK (17 and higher)
+- sync Gradle
 - prepare DB credentials in external file `db-credentials.yml` (path specified in application.yml):
 ```yaml
 db:
