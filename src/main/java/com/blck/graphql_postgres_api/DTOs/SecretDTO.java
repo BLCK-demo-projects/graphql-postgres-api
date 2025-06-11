@@ -1,22 +1,26 @@
 package com.blck.graphql_postgres_api.DTOs;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "secret")
 public class SecretDTO {
 
 	@Id
 	private Long id;
-	private Long nemesisId;
+
+	@ManyToOne
+	@JoinColumn(name = "nemesis_id")
+	private NemesisDTO nemesis;
+
 	private Long secretCode;
 
 	public SecretDTO() {
 	}
 
-	public SecretDTO(Long id, Long nemesisId, Long secretCode) {
+	public SecretDTO(Long id, NemesisDTO nemesisId, Long secretCode) {
 		this.id = id;
-		this.nemesisId = nemesisId;
+		this.nemesis = nemesisId;
 		this.secretCode = secretCode;
 	}
 
@@ -28,12 +32,12 @@ public class SecretDTO {
 		this.id = id;
 	}
 
-	public Long getNemesisId() {
-		return nemesisId;
+	public NemesisDTO getNemesisId() {
+		return nemesis;
 	}
 
-	public void setNemesisId(Long nemesisId) {
-		this.nemesisId = nemesisId;
+	public void setNemesisId(NemesisDTO nemesisId) {
+		this.nemesis = nemesisId;
 	}
 
 	public Long getSecretCode() {

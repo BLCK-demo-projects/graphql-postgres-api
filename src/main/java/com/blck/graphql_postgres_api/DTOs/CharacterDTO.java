@@ -2,8 +2,12 @@ package com.blck.graphql_postgres_api.DTOs;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.time.LocalDate;
 
 @Entity
+@Table(name = "character")
 public class CharacterDTO {
 
 	@Id
@@ -13,7 +17,7 @@ public class CharacterDTO {
 	private String ability;
 	private Float minimalDistance;
 	private Float weight;
-	private String born;
+	private LocalDate born;
 	private String inSpaceSince;
 	private Integer beerConsumption;
 	private Boolean knowsTheAnswer;
@@ -27,7 +31,7 @@ public class CharacterDTO {
 						String ability,
 						Float minimalDistance,
 						Float weight,
-						String born,
+						LocalDate born,
 						String inSpaceSince,
 						Integer beerConsumption,
 						Boolean knowsTheAnswer) {
@@ -91,11 +95,11 @@ public class CharacterDTO {
 		this.weight = weight;
 	}
 
-	public String getBorn() {
+	public LocalDate getBorn() {
 		return born;
 	}
 
-	public void setBorn(String born) {
+	public void setBorn(LocalDate born) {
 		this.born = born;
 	}
 

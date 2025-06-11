@@ -6,6 +6,12 @@ type Query {
     character(id: ID!): CharacterDTO
 
     countCharacters: Int
+
+    averageAges: Float
+
+    averageCharWeight: Float
+
+    charactersAndTheirJoins: [String]
 }
 
 type CharacterDTO {

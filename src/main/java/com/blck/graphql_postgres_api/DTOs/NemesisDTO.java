@@ -1,21 +1,25 @@
 package com.blck.graphql_postgres_api.DTOs;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "nemesis")
 public class NemesisDTO {
 
 	@Id
 	private Long id;
-	private Long characterId;
+
+	@ManyToOne
+	@JoinColumn(name = "character_id")
+	private CharacterDTO characterId;
+
 	private Boolean isAlive;
 	private Integer years;
 
 	public NemesisDTO() {
 	}
 
-	public NemesisDTO(Long id, Long characterId, Boolean isAlive, Integer years) {
+	public NemesisDTO(Long id, CharacterDTO characterId, Boolean isAlive, Integer years) {
 		this.id = id;
 		this.characterId = characterId;
 		this.isAlive = isAlive;
@@ -30,11 +34,11 @@ public class NemesisDTO {
 		this.id = id;
 	}
 
-	public Long getCharacterId() {
+	public CharacterDTO getCharacterId() {
 		return characterId;
 	}
 
-	public void setCharacterId(Long characterId) {
+	public void setCharacterId(CharacterDTO characterId) {
 		this.characterId = characterId;
 	}
 
