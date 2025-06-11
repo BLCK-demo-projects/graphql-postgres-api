@@ -97,3 +97,11 @@ http://localhost:8080/graphql
 }
 ```
 
+### Sources
+- https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config
+- https://www.baeldung.com/spring-boot-disable-hibernate-entity-validation
+- https://stackoverflow.com/questions/2276644/list-all-tables-in-postgresql-information-schema
+- Functional Programming in Java, Second Edition - Venkat Subramaniam
+- https://github.com/JetBrains/js-graphql-intellij-plugin?tab=readme-ov-file#basic-configuration
+- https://spring.io/guides/gs/graphql-server
+- SQL Cookbook 2nd Edition - Anthony Molinaro
