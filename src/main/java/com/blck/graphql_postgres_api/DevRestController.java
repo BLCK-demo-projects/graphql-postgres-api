@@ -9,21 +9,14 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
-public class GraphqlApi {
+@RequestMapping("/dev")
+public class DevRestController {
 
-	private final CharacterRepository characterRepository;
 	private final SchemaService schemaService;
 
 	@Autowired
-	public GraphqlApi(CharacterRepository characterRepository, SchemaService schemaService) {
-		this.characterRepository = characterRepository;
+	public DevRestController(SchemaService schemaService) {
 		this.schemaService = schemaService;
-	}
-
-	@GetMapping("/details")
-	public List<Character> getInfo() {
-		return characterRepository.findAll();
 	}
 
 	@GetMapping("/schema")
@@ -31,7 +24,7 @@ public class GraphqlApi {
 		return schemaService.getSchema();
 	}
 
-	@GetMapping("/reducedSchema")
+	@GetMapping("reducedSchema")
 	public Map<String, List<String>> getReducedSchema() {
 		return schemaService.getReducedSchema();
 	}

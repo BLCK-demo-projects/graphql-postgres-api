@@ -1,4 +1,14 @@
-type Character {
+type Query {
+    # left side: mapping to controller method names
+    # right side: return type
+    characters: [CharacterDTO]
+
+    character(id: ID!): CharacterDTO
+
+    countCharacters: Int
+}
+
+type CharacterDTO {
     id: ID
     name: String
     gender: String
@@ -11,14 +21,14 @@ type Character {
     knows_the_answer: Boolean
 }
 
-type Nemesis {
+type NemesisDTO {
     id: ID
     character_id: ID
     is_alive: Boolean
     years: Int
 }
 
-type Secret {
+type SecretDTO {
     id: ID
     nemesis_id: ID
     secret_code: String
