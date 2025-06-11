@@ -65,12 +65,12 @@ GET http://localhost:8080/dev/reducedSchema
 
 GraphiQL in-browser tool for writing, validating, and testing GraphQL queries can be accessed at `localhost:8080/graphiql`.
 
-Get characters, join with nemeses and secrets (tree structure) [INCOMPLETE]:
+Get characters, join with nemeses and secrets (tree structure) [incomplete serialisation]:
 ```
+http://localhost:8080/graphql
 {
   charactersAndTheirJoins
 }
-http://localhost:8080/graphql
 ```
 
 Get count of characters:
