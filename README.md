@@ -18,7 +18,7 @@ db:
 
 ### Schema
 
-A character can have one or more nemeses -> one to many. Nemesis and secret have both foreign key pointing to each other -> ambigous.
+A character can have one or more nemeses -> one to many. Nemesis and secret have both foreign key pointing to each other -> ambiguous.
 ```
 type CharacterDTO {
     id: ID
