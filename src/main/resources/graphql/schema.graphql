@@ -1,0 +1,25 @@
+type Character {
+    id: ID
+    name: String
+    gender: String
+    ability: String
+    minimal_distance: Float
+    weight: Float
+    born: String
+    in_space_since: String
+    beer_consumption: Float
+    knows_the_answer: Boolean
+}
+
+type Nemesis {
+    id: ID
+    character_id: ID
+    is_alive: Boolean
+    years: Int
+}
+
+type Secret {
+    id: ID
+    nemesis_id: ID
+    secret_code: String
+}

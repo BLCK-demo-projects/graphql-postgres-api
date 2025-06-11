@@ -19,7 +19,19 @@ public class SchemaService {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	public Map<String, List<String>> getSchema() {
+	public List<Map<String, Object>> getSchema() {
+		String sql = """
+			SELECT table_name, column_name
+			FROM information_schema.columns
+			WHERE table_schema = 'public'
+				AND table_name IN ('character', 'nemesis', 'secret')
+			ORDER BY table_name;
+		""";
+
+		return jdbcTemplate.queryForList(sql);
+	}
+
+	public Map<String, List<String>> getReducedSchema() {
 		String sql = """
 			SELECT table_name, column_name
 			FROM information_schema.columns
